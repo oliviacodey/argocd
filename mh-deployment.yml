@@ -1,29 +1,21 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mh-app
-  labels:
-    app: mh-app
+  name: guestbook-ui
 spec:
   replicas: 1
+  revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: mh-app
+      app: guestbook-ui
   template:
     metadata:
       labels:
-        app: mh-app
+        app: guestbook-ui
     spec:
       containers:
-      - name: mh-web
-        image: nginx
+      - image: gcr.io/heptio-images/ks-guestbook-demo:0.2
+        name: guestbook-ui
         ports:
         - containerPort: 80
-        volumeMounts:
-        - mountPath: /usr/share/nginx/html
-          name: nfs-pvc-mh-web-1g
-      volumes:
-      - name: nfs-pvc-mh-web-1g
-        persistentVolumeClaim:
-          claimName: nfs-pvc-mh-web-1g
-
