@@ -26,6 +26,13 @@ spec: # specification for deployment resource
             secretKeyRef:
               name: mariadb-secret
               key: mariadb-root-password
+        volumeMounts:
+        - name: mariadb-pv
+          mountPath: /var/lib/mysql
+      volumes:
+      - name: mariadb-pv
+        persistentVolumeClaim:
+          claimName: mariadb-pv-claim
       - name: phpmyadmin
         image: bitnami/phpmyadmin:latest
         ports:
