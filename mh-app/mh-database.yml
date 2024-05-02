@@ -19,7 +19,11 @@ spec: # specification for deployment resource
         - containerPort: 3306 
         env:
         - name: MARIADB_ROOT_PASSWORD
-          value: secret
+          # value: secret
+          valueFrom:
+            secretKeyRef:
+              name: mariadb-secret
+              key: mariadb-root-password
       - name: phpmyadmin
         image: bitnami/phpmyadmin:latest
         ports:
