@@ -8,9 +8,9 @@ spec:
   volumeMode: Filesystem
   accessModes:
     - ReadWriteMany
-  storageClassName: nfs
+  storageClassName: nfs-csi
   mountOptions:
     - hard
   nfs:
-    path: /mnt/data1/kubernetes
+    path: /mnt/data1/kubernetes/mh-wiki-db
     server: atom.hedberg.life
