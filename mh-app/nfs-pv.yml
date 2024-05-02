@@ -12,5 +12,5 @@ spec:
   mountOptions:
     - hard
   nfs:
-    path: /mnt/data1/kubernetes
+    path: /mnt/data1/kubernetes/mh-wiki
     server: atom.hedberg.life
