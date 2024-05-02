@@ -18,6 +18,8 @@ spec: # specification for deployment resource
         ports:
         - containerPort: 3306 
         env:
+        - name: MARIADB_DATABASE
+          value: my_wiki
         - name: MARIADB_ROOT_PASSWORD
           # value: secret
           valueFrom:
@@ -34,5 +36,3 @@ spec: # specification for deployment resource
             configMapKeyRef:
               name: mariadb-configmap
               key: database_url
-        - name: MARIADB_DATABASE
-          value: my_wiki
