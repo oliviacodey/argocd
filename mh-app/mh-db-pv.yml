@@ -8,7 +8,7 @@ spec:
   volumeMode: Filesystem
   accessModes:
     - ReadWriteMany
-  storageClassName: nfs-csi
+  storageClassName: nfs
   mountOptions:
     - hard
   nfs:
