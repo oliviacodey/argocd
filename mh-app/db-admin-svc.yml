@@ -8,6 +8,6 @@ spec:
   - port: 8080
     targetPort: 8080
   selector:
-    app: mariadb
+    app: phpmyadmin
 
 # kubectl expose deploy/mariadb-deployment --port 8080 --target-port 8080 --type LoadBalancer --name=phpmyadmin-service

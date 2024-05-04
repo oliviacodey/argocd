@@ -33,13 +33,3 @@ spec: # specification for deployment resource
       - name: mariadb-pv
         persistentVolumeClaim:
           claimName: mariadb-pvc-1g
-      - name: phpmyadmin
-        image: bitnami/phpmyadmin:latest
-        ports:
-        - containerPort: 8080
-        env:
-        - name: DATABASE_HOST
-          valueFrom:
-            configMapKeyRef:
-              name: mariadb-configmap
-              key: database_url
