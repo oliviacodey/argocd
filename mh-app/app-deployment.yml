@@ -21,7 +21,7 @@ spec:
         volumeMounts:
           - mountPath: "/var/www/html/images"
             name: mh-app-pvc-storage
-          - mountPath: "/var/www/html/LocalSettings.php"
+          - mountPath: "/opt/configfile"
             name: mh-app-config
       volumes:
       - name: mh-app-pvc-storage
