@@ -22,7 +22,7 @@ spec:
           - mountPath: "/var/www/html/images"
             name: mh-app-pvc-storage
           - name: config-volume
-            mountPath: /var/www/html/LocalSettings.php
+            mountPath: /var/www/html
       volumes:
       - name: mh-app-pvc-storage
         persistentVolumeClaim:
@@ -30,3 +30,6 @@ spec:
       - name: config-volume
         configMap:
           name: mediawiki
+          items:
+          - key: SPECIAL_LEVEL
+            path: LocalSettings.php
