@@ -24,4 +24,4 @@ spec:
       volumes:
       - name: mh-app-pvc-storage
         persistentVolumeClaim:
-          claimName: nfs-pvc-mh-web-1g
+          claimName: mh-app-pvc-1g
