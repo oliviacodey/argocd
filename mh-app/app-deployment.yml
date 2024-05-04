@@ -21,12 +21,12 @@ spec:
         volumeMounts:
           - mountPath: "/var/www/html/images"
             name: mh-app-pvc-storage
-          - mountPath: "/opt/configfile"
-            name: mh-app-config
+          - name: config-volume
+            mountPath: /var/www/html/LocalSettings.php
       volumes:
       - name: mh-app-pvc-storage
         persistentVolumeClaim:
           claimName: mh-app-pvc-1g
-      - name: mh-app-config
-        persistentVolumeClaim:
-          claimName: mh-app-config-1g
+      - name: config-volume
+        configMap:
+          name: mediawiki
