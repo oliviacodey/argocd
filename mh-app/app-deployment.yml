@@ -32,4 +32,4 @@ spec:
           name: mediawiki
           items:
           - key: LocalSettings.php
-            path: .
+            path: LocalSettings.php
